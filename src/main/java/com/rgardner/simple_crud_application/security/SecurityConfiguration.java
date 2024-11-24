@@ -23,6 +23,7 @@ public class SecurityConfiguration {
         return httpSecurity
                 .formLogin(f -> f
                         .loginPage("/login")
+                        .failureUrl("/login?error=true")
                         .permitAll()
                 )
                 .csrf(CsrfConfigurer::disable)
